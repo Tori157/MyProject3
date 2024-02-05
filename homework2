@@ -1,0 +1,260 @@
+// 1.
+class Book {
+  constructor(title, author, yearPublished) {
+    this.title = title || "no title";
+    this.author = author || "no author";
+    this.yearPublished = yearPublished || 0;
+  }
+
+  getInfo() {
+    return `${this.title} by ${this.author} (${this.yearPublished})`;
+  }
+}
+const book = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  1997
+);
+
+console.log(book.getInfo()); // "Harry Potter and the Sorcerer's Stone by J.K. Rowling (1997)"
+
+// 2.
+class Book {
+  constructor(title, author, yearPublished) {
+    this.title = title;
+    this.author = author;
+    this.yearPublished = yearPublished;
+  }
+
+  getInfo() {
+    return `${this.title} by ${this.author} (${this.yearPublished})`;
+  }
+}
+const book = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  1997
+);
+// getInfo() {
+//     if (this.price <= 0 || this.quantity <= 0) {
+//       return undefined;
+//     }
+
+//     return this.price * this.quantity;
+//   }
+}
+console.log(book.getInfo()); // "Harry Potter and the Sorcerer's Stone by J.K. Rowling (1997)"
+
+// 3.
+// สร้าง Book objects
+const book1 = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  345,
+  "fantasy"
+);
+const book2 = new Book(
+  "The Lord of the Rings: The Fellowship of the Ring",
+  "J.R.R. Tolkien",
+  480,
+  "fantasy"
+);
+const book3 = new Book("The Hunger Games", "Suzanne Collins", 374, "dystopian");
+
+// สร้าง Library object
+const library = new Library("My Library");
+
+// library(quantity) {
+//     if (
+//       this.quantity < quantity ||
+//       quantity <= 0 ||
+        !Number.isInteger(quantity)     
+//     ) {
+//       return undefined;
+//     }
+// this.quantity -= quantity;
+//     return { "name": this.name, "quantity" : this.quantity };
+//   }
+
+// เพิ่ม books ลงใน library
+library.addBook(book1);
+library.addBook(book2);
+library.addBook(book3);
+
+// ดึง books ทั้งหมดจาก library
+const allBooks = library.getBooks();
+
+// ดึง books ที่ตรงกับ genre "fantasy"
+const fantasyBooks = library.getBooksByGenre("fantasy");
+
+// ดึงจำนวนหน้าทั้งหมดของ books ที่ตรงกับ genre "fantasy"
+const totalPagesFantasy = library.getTotalPagesByGenre("fantasy");
+
+console.log(allBooks); // [Book, Book, Book]
+console.log(fantasyBooks); // [Book, Book]
+console.log(totalPagesFantasy); // 825
+
+// 4.
+// สร้าง Book objects
+const book1 = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  345,
+  "fantasy"
+);
+const book2 = new Book(
+  "The Lord of the Rings: The Fellowship of the Ring",
+  "J.R.R. Tolkien",
+  480,
+  "fantasy"
+);
+const book3 = new Book("The Hunger Games", "Suzanne Collins", 374, "dystopian");
+
+// สร้าง Library object
+const library = new Library("My Library");
+
+// เพิ่ม books ลงใน library
+library.addBook(book1);
+library.addBook(book2);
+library.addBook(book3);
+
+// ดึง books ทั้งหมดจาก library
+const allBooks = library.getBooks();
+// Books(quantity) {
+//     if (quantity <= 0) {
+//       return undefined;
+//     }
+
+//     this.quantity += quantity;
+//     return this.quantity;
+//   }
+// ดึง books ที่ตรงกับ genre "fantasy"
+const fantasyBooks = library.getBooksByGenre("fantasy");
+
+// ดึงจำนวนหน้าทั้งหมดของ books ที่ตรงกับ genre "fantasy"
+const totalPagesFantasy = library.getTotalPagesByGenre("fantasy");
+
+console.log(allBooks); // [Book, Book, Book]
+console.log(fantasyBooks); // [Book, Book]
+console.log(totalPagesFantasy); // 825
+
+// 5.
+class Book {
+  constructor(title, author, pages, genre) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.genre = genre;
+  }
+
+  getSummary() {
+    return `${this.title} by <span class="math-inline">\{this\.author\} \(</span>{this.pages} pages, ${this.genre})`;
+  }
+}
+
+class Library {
+  constructor(name) {
+    this.name = name;
+    this.books = [];
+  }
+
+  addBook(newBook) {
+    this.books.push(newBook);
+  }
+
+  getBooks() {
+    return this.books;
+  }
+
+  getBooksByGenre(genre) {
+    return this.books.filter((book) => book.genre === genre);
+  }
+
+  getTotalPagesByGenre(genre) {
+    return this.books
+      .filter((book) => book.genre === genre)
+      .reduce((sum, book) => sum + book.pages, 0);
+  }
+}
+
+// สร้าง Book objects
+const book1 = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  345,
+  "fantasy"
+);
+const book2 = new Book(
+  "The Lord of the Rings: The Fellowship of the Ring",
+  "J.R.R. Tolkien",
+  480,
+  "fantasy"
+);
+const book3 = new Book("The Hunger Games", "Suzanne Collins", 374, "dystopian");
+// book3() {
+//     if (this.quantity <= 0) {
+//       return false;
+//     }
+//     return true;
+//   }
+// สร้าง Library object
+const library = new Library("My Library");
+
+// เพิ่ม books ลงใน library
+library.addBook(book1);
+library.addBook(book2);
+
+// 6.
+// สร้าง Book objects
+const book1 = new Book(
+  "Harry Potter and the Sorcerer's Stone",
+  "J.K. Rowling",
+  345,
+  "fantasy"
+);
+const book2 = new Book(
+  "The Lord of the Rings: The Fellowship of the Ring",
+  "J.R.R. Tolkien",
+  480,
+  "fantasy"
+);
+const book3 = new Book("The Hunger Games", "Suzanne Collins", 374, "dystopian");
+
+// สร้าง Library object
+const library = new Library("My Library");
+
+// เพิ่ม books ลงใน library
+library.addBook(book1);
+library.addBook(book2);
+library.addBook(book3);
+// library(otherProduct) {
+//     return this.price - otherProduct.price;
+//   }
+// ดึง books ทั้งหมดจาก library
+const allBooks = library.getBooks();
+
+// ดึง books ที่ตรงกับ genre "fantasy"
+const fantasyBooks = library.getBooksByGenre("fantasy");
+
+// ดึงจำนวนหน้าทั้งหมดของ books ที่ตรงกับ genre "fantasy"
+const totalPagesFantasy = library.getTotalPagesByGenre("fantasy");
+
+console.log(allBooks); // [Book, Book, Book]
+console.log(fantasyBooks); // [Book, Book]
+console.log(totalPagesFantasy); // 825
+
+// ฟังก์ชั่นเพื่อแสดงรายการหนังสือทั้งหมด
+function displayBooks(books) {
+  for (const book of books) {
+    console.log(book.getSummary());
+  }
+}
+
+// แสดงรายการหนังสือทั้งหมด
+displayBooks(allBooks);
+
+// แสดงรายการหนังสือประเภท fantasy
+displayBooks(fantasyBooks);
+
+// แสดงจำนวนหน้าทั้งหมดของหนังสือประเภท fantasy
+console.log(`Total pages of fantasy books: ${totalPagesFantasy}`);
