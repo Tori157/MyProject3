@@ -1,0 +1,309 @@
+1.
+Instruction:
+- Adding task When the user enters text into the input field and clicks the button, add the
+text as a new item in the list <ul id="todoList"></ul>.
+1. init() :: Add an event listener to the "addButton" button to call the "addTask" function
+when clicked.
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do App</title>
+<script src="todo.js"></script>
+</head>
+<body>
+  <input type="text" id="taskInput">
+  <button id="addButton">Add</button>
+  <ul id="taskList"></ul>
+</body>
+</html>
+2. addTask() ::
+function init() {
+  const addButton = document.getElementById("addButton");
+  addButton.addEventListener("click", addTask);
+}
+
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const taskList = document.getElementById("taskList");
+
+  const newTask = document.createElement("li");
+  newTask.textContent = taskInput.value;
+  taskList.appendChild(newTask);
+
+  taskInput.value = ""; // Clear input field
+}
+
+init();
+
+
+
+
+2.1 Create a <li> tag and set its textContent to the value from the <input type="text"
+ id="todoInput" placeholder="Enter a new task"> field.
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do App</title>
+<script src="todo.js"></script>
+</head>
+<body>
+  <button id="addButton">Add</button>
+  <input type="text" id="taskInput">
+  <ul id="taskList"></ul>
+</body>
+</html>
+2.2 Add a <li> tag to the <ul id="todoList"></ul>
+
+2.3 After adding the item, clear the <input type="text" id="todoInput"
+ placeholder="Enter a new task"> field to prepare for the next task.
+function init() {
+  const addButton = document.getElementById("addButton");
+  addButton.addEventListener("click", addTask);
+}
+
+function addTask() {
+  const taskInput = document.getElementById("taskInput");
+  const taskList = document.getElementById("taskList");
+
+  const newTask = document.createElement("li");
+  newTask.textContent = taskInput.value;
+  taskList.appendChild(newTask);
+
+  taskInput.value = ""; // Clear input field
+}
+
+init();
+
+1. Enter Task 2. Click Button "Add" to add Task
+Initiate code:
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Interactive To-Do List</title>
+</head>
+<body>
+ <input type="text" id="todoInput" placeholder="Enter a new task">
+ <button id="addButton">Add</button>
+ <ul id="todoList"></ul>
+ <script src="todo.js"></script>
+</body>
+</html>
+todo.js
+function init() {
+//your code here
+}
+function addTask() {
+//your code here
+}
+init();
+2.
+Instruction:
+- Following practice 1 but change html as follows.
+Initiate code:
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Interactive To-Do List</title>
+ <style>
+ .todoInput {
+ padding: 10px;
+ font-size: 16px;
+ border: 2px solid #ddd;
+ border-radius: 4px;
+ margin-right: 5px;
+ }
+ .addButton {
+ padding: 10px 20px;
+ font-size: 16px;
+ background-color: #5cb85c;
+ color: white;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+ }
+ </style>
+</head>
+<body>
+ <div>
+ <input type="text" class="todoInput" placeholder="Enter a new task">
+ <button class="addButton">Add</button>
+ </div>
+ <div>
+ <ul id="todoList"></ul>
+ </div>
+ <script src="todo.js"></script>
+</body>
+</html>
+todo.js
+function init() {
+//your code here
+}
+function addTask() {
+//your code here
+}
+init();
+3.
+Instruction:
+- Following practice 1 but change html as follows.
+Initiate code:
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Interactive To-Do List</title>
+</head>
+<body>
+ <div>
+ <input type="text" placeholder="Enter a new task">
+ <button>Add</button>
+ </div>
+ <div>
+ <ul id="todoList"></ul>
+ </div>
+ <script src="todo.js"></script>
+</body>
+</html>
+todo.js
+
+  <!DOCTYPE html>
+<html>
+<head>
+<title>To-Do App</title>
+<script src="todo.js"></script>
+</head>
+<body>
+  <button id="addButton">Add</button>
+  <ul id="taskList"></ul>
+  <input type="text" id="taskInput">
+</body>
+</html>
+  
+function init() {
+//your code here
+}
+function addTask() {
+//your code here
+}
+init();
+4.
+Instruction:
+- Create all elements in Practice 3
+init():
+First <div>
+ <input type="text" placeholder="Enter a new task">
+ <button>Add</button>
+Second <div>
+ <ul id="todoList"></ul>
+addTask(): Following function in practice 1
+Initiate code:
+Index.html
+<!DOCTYPE html>
+<html>
+<head>
+<title>To-Do App</title>
+<script src="todo.js"></script>
+</head>
+<body>
+  <h1>My To-Do List</h1>
+  <button id="addButton">Add</button>
+  <ul id="taskList">
+    <li>First Task</li>
+    <li>Second Task</li>
+  </ul>
+  <input type="text" id="taskInput">
+</body>
+</html>
+  
+todo.js
+function init() {
+//your code here
+}
+function addTask() {
+//your code here
+}
+init();
+5.
+Instruction:
+- Create Registration Form as follows.
+init() :
+1. Create all Elements under <head> and <body>
+head
+ <title>Registration Form</title>
+body
+ <h2>Register</h2>
+ <div>
+ <label for="name">Full Name:</label>
+ <input type="text" id="name" name="name" required>
+ </div>
+ <div>
+ <label for="email">Email Address:</label>
+ <input type="email" id="email" name="email" required>
+ </div>
+ <div>
+ <button type="submit">Register</button>
+ </div>
+ //for show userRegister
+ <div>
+ </div>
+2. add an event listener to the "Register" button to call the "showUserRegister"
+function when clicked.
+showUserRegister():
+1. Create a <p> tag and add a <p> tag to last a <div> tag.
+  <!DOCTYPE html>
+<html>
+<head>
+<title>Registration Form</title>
+<script src="myform.js"></script>
+</head>
+<body>
+  <h1>Register</h1>
+  <div id="formContainer"></div>
+  <div id="userRegister"></div>
+</body>
+</html>
+2. Set a <p> tag textContent: name and email from an <input> tag.
+Initiate code:
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script src="myfrom.js"></script>
+</body>
+</html>
+myfrom.js
+function init() {
+//your code here
+}
+function showUserRegister(){
+//your code here
+}
+init();
+
+
+function init() {
+  const formContainer = document.getElementById("formContainer");
+  const userRegister = document.getElementById("userRegister");
+
+  const form = document.createElement("form");
+  form.innerHTML = `
+    <label for="fullName">Full Name:</label>
+    <input type="text" id="fullName"><br>
+    <label for="emailAddress">Email Address:</label>
+    <input type="email" id="emailAddress"><br>
+    <button id="registerButton">Register</button>
+  `;
+  formContainer.appendChild(form);
+
+  const registerButton = document.getElementById("registerButton");
+  registerButton.addEventListener("click", showUserRegister);
+}
+
+function showUserRegister() {
+  const fullName = document.getElementById("fullName").value;
+  const emailAddress = document.getElementById("emailAddress").value;
+
+  const p = document.createElement("p
