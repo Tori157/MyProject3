@@ -1,0 +1,59 @@
+
+**index.html**:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+  <h2>เพิ่ม Element</h2>
+  <button id="addButton">เพิ่ม Element</button>
+  <div id="addElementHere"></div>
+</div>
+
+<div class="container">
+  <h2>ลบ Element</h2>
+  <p id="elementToDelete">Element ที่ต้องการลบ</p>
+  <button id="deleteButton">ลบ Element</button>
+</div>
+
+<div class="container">
+  <h2>อัปเดต Element</h2>
+  <p id="elementToUpdate">เนื้อหาเดิม</p>
+  <button id="updateButton">อัปเดต Element</button>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+```
+
+**main.js**:
+```javascript
+document.addEventListener("DOMContentLoaded", function() {
+  // เพิ่ม Element
+  document.getElementById("addButton").addEventListener("click", function() {
+    var newElement = document.createElement("p");
+    newElement.textContent = "เนื้อหาใหม่";
+    document.getElementById("addElementHere").appendChild(newElement);
+  });
+
+  // ลบ Element
+  document.getElementById("deleteButton").addEventListener("click", function() {
+    var elementToDelete = document.getElementById("elementToDelete");
+    elementToDelete.parentNode.removeChild(elementToDelete);
+  });
+
+  // อัปเดต Element
+  document.getElementById("updateButton").addEventListener("click", function() {
+    var elementToUpdate = document.getElementById("elementToUpdate");
+    elementToUpdate.textContent = "เนื้อหาใหม่";
+  });
+});
+``
